@@ -1,9 +1,6 @@
 pipeline {
     agent any
-	tools {
-        maven 'Maven 3.5.2'
-        jdk 'jdk8'
-		}
+	
 	
     stages {
 		stage ('Initialize') {
@@ -16,7 +13,7 @@ pipeline {
         }
         stage ('Clone') {
             steps {
-                git branch: 'master', url: "https://github.com/pushpendrad/emsdockerhub/ps://github.com/jfrog/project-examples.git"
+                git branch: 'master', url: "https://github.com/aakankshi/alm_java1.git"
             }
         }
 
@@ -24,12 +21,13 @@ pipeline {
 
         stage ('Exec Maven') {
             steps {
-                rtMavenRun (
-                    tool: MAVEN, // Tool name from Jenkins configuration
-                    pom: 'emsdockerhub/pom.xml',
-                    goals: 'clean install compile',
-                    deployerId: "MAVEN_DEPLOYER",
-                    resolverId: "MAVEN_RESOLVER"
+                //rtMavenRun (
+                    //tool: MAVEN, // Tool name from Jenkins configuration
+                    //pom: 'emsdockerhub/pom.xml',
+                    //goals: 'clean install compile',
+		    sh 'mvn clean install compile'
+                    //deployerId: "MAVEN_DEPLOYER",
+                    //resolverId: "MAVEN_RESOLVER"
                 )
             }
         }
