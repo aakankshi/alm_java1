@@ -43,19 +43,6 @@
    <artifactId>sonar-maven-plugin</artifactId>
    <version>2.7.1</version>
      </plugin>
-      <plugin>
-        <groupId>org.apache.tomcat.maven</groupId>
-        <artifactId>tomcat7-maven-plugin</artifactId>
-        <version>2.2</version>
-        <configuration>
-          <url>http://www.localhost:8080/manager/text</url>
-		  <service>TomcatServer</service>
-		  <path>/sonali</path>
-		  <username>tomcat</username>
-		  <password>tomcat</password>
-        </configuration>
-      </plugin>
-
-  </plugins>
+      </plugins>
   </build>
 </project>
